@@ -1,0 +1,193 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <title>GITA PROJECT</title>
+    <script src="loanpage.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="LoanPageStyles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="main-body">
+      <div class="container">
+        <img
+          id="bank-image"
+          alt="#"
+          src="https://static.vecteezy.com/system/resources/previews/000/348/687/non_2x/bank-vector-icon.jpg"
+        />
+        <a href="#" class="navbar-brand">How to choose bank in Georgia</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Project by George P-N</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Short Bio</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Board-->
+    <section class="bg-dark text-light p-5 p-lg-0 text-left">
+      <div class="container">
+        <div class="d-sm-flex justify-content-around">
+          <div>
+            <h3 class="loan-checkbox-headlines">Loan Eligibility</h3>
+            <div>
+              In order to determine whether the applicant is aligible to get
+              loan, <br />
+              we require applicants to meet certain mandatory conditions. <br />
+              Please kindly check the appropriate boxes to verify your
+              eligibility for credit
+            </div>
+          </div>
+          <div>
+            <h3 class="loan-checkbox-headlines">Loan Eligibility Checkbox</h3>
+            <div>
+              <div id="checkboxes">
+                <div class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="checkbox1"
+                  />
+                  <label class="custom-control-label" for="customCheck1"
+                    >Do you have legal permit to stay in Georgia?</label
+                  >
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="checkbox2"
+                  />
+                  <label class="custom-control-label" for="customCheck1"
+                    >Do you have a stable income?</label
+                  >
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="checkbox3"
+                  />
+                  <label class="custom-control-label" for="customCheck1"
+                    >Have you obtained taxpayer ID from Revenue Service?</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="status-check"
+        class="eligibility-status border-corners loan-apply-button"
+      >
+        Status: undefined
+      </div>
+      <div id="loan-apply-button">
+        <button type="button" class="btn btn-warning">
+          Click Here to calculate credit plan
+        </button>
+      </div>
+    </section>
+
+    <!--BANK LOGOS ON ROW-->
+
+    <section class="bg-primary text-light p-5">
+      <div class="container">
+        <div id="loan-calculator" class="parameters border-corners">
+          <h2>Enter Loan Paramenters</h2>
+          <br />
+          <!--Enter loan info calc-->
+          <div id="box">
+            <form>
+              <label class="border-corners" for="Yrate">Loan Type:</label>
+              <select class="border-corners" id="Yrate" name="lname" value="">
+                <option value="6">Mortgage</option>
+                <option value="16">Personal</option>
+                <option value="10">Business</option>
+              </select>
+
+              <label for="loanPV">Loan Amount GEL:</label>
+              <input
+                class="border-corners"
+                type="text"
+                id="Lamount"
+                name="loan"
+                value=""
+              />
+
+              <label for="Npmt">Enter Years:</label>
+              <input
+                class="border-corners"
+                type="text"
+                id="Mper"
+                name="lname"
+                value=""
+              /><br />
+
+              <input
+                id="submitBtn"
+                class="border-corners"
+                type="submit"
+                value="Calculate"
+              />
+            </form>
+          </div>
+          <br />
+          <button
+            id="clearBtn"
+            class="border-corners"
+            onClick="window.location.reload();"
+          >
+            Clear
+          </button>
+        </div>
+        <!--Calc Summary BOX-->
+
+        <!--TABLE BOX-->
+        <div id="main-box" class="parameters border-corners">
+          <table id="table" class="parameters border-corners">
+            <tbody id="hook">
+              <tr id="header">
+                <th>Period</th>
+                <th>Starting Balance</th>
+                <th>Total PMT</th>
+                <th>Interest</th>
+                <th>Principal</th>
+                <th>Ending Balance</th>
+              </tr>
+              <tr></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!--VARIABLE BANK INFORMATION-->
+    <div id="variable-bank-info"></div>
+
+    <!---Determine best bank for credit to apply-->
+
+    <section class="bg-secondary text-light p-5">
+      <div class="container"></div>
+    </section>
+  </body>
+</html>
